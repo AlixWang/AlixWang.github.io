@@ -5,15 +5,34 @@
   
   <title>JS How To</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
+  <meta name="description" content="###第一部分 基本概念######1.1 严格模式
+
+ ECMAScript 5引入了严格模式（strict mode）的概念。严格模式是为Javascript定义了一种不同的解析和执行模型。在严格模式下，ECMAScript 3 中的一些不确定的行为将得到处理。对某些不安全的操作也会抛出错误。
+
+ 启用方法
+&amp;quot;use strict&amp;quot;
+在函数内部的上方包含着条编译指示，也可以">
+<meta property="og:type" content="article">
 <meta property="og:title" content="JS How To">
-<meta property="og:url" content="http://alixwang.github.io/index.html">
+<meta property="og:url" content="http://alixwang.github.io/2016/03/08/2015-06-09-Javascript高级程序设计/index.html">
 <meta property="og:site_name" content="JS How To">
-<meta property="og:description">
+<meta property="og:description" content="###第一部分 基本概念######1.1 严格模式
+
+ ECMAScript 5引入了严格模式（strict mode）的概念。严格模式是为Javascript定义了一种不同的解析和执行模型。在严格模式下，ECMAScript 3 中的一些不确定的行为将得到处理。对某些不安全的操作也会抛出错误。
+
+ 启用方法
+&amp;quot;use strict&amp;quot;
+在函数内部的上方包含着条编译指示，也可以">
+<meta property="og:updated_time" content="2015-10-25T12:07:01.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JS How To">
-<meta name="twitter:description">
+<meta name="twitter:description" content="###第一部分 基本概念######1.1 严格模式
+
+ ECMAScript 5引入了严格模式（strict mode）的概念。严格模式是为Javascript定义了一种不同的解析和执行模型。在严格模式下，ECMAScript 3 中的一些不确定的行为将得到处理。对某些不安全的操作也会抛出错误。
+
+ 启用方法
+&amp;quot;use strict&amp;quot;
+在函数内部的上方包含着条编译指示，也可以">
   
     <link rel="alternate" href="/atom.xml" title="JS How To" type="application/atom+xml">
   
@@ -62,147 +81,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-2015-01-11-第一篇日志" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/08/2015-01-11-第一篇日志/" class="article-date">
-  <time datetime="2016-03-07T16:09:13.302Z" itemprop="datePublished">2016-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##这个是我的第一篇博客文章</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://alixwang.github.io/2016/03/08/2015-01-11-第一篇日志/" data-id="cili6ooyb0000y4agypaj70k0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-01-30-HTTP实体和编码" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/08/2015-01-30-HTTP实体和编码/" class="article-date">
-  <time datetime="2016-03-07T16:09:11.198Z" itemprop="datePublished">2016-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#HTTP实体和编码</p>
-<p>##报文实体的组成</p>
-<p>###实体首部###</p>
-<ul>
-<li><p>Content-Type              <strong>实体类型</strong> </p>
-</li>
-<li><p>Content-Length  <strong>实体长度</strong></p>
-</li>
-<li><p>Content-Language    <strong>实体语言</strong></p>
-</li>
-<li><p>Content-Encoding    <strong>对数据所做的任意变换</strong></p>
-</li>
-<li><p>Content-Location<strong>一个备用位置，请求时可通过他获得对象</strong></p>
-</li>
-<li><p>Content-Range <strong>如果这是部分实体，这个首部说明他是整体的哪个部分</strong></p>
-</li>
-<li><p>Content-MD5<strong>实体主体内容的校验和</strong></p>
-</li>
-<li><p>Last-Modified<strong>所传输内容在服务器上创建或最后修改的时间</strong></p>
-</li>
-<li><p>Expires<strong>实体数据将要失效的日期时间</strong></p>
-</li>
-<li><p>Allow <strong>该资源所允许的各种请求方法 EG：GET、HEAD</strong></p>
-</li>
-<li><p>ETag<strong>文档实例的唯一验证码</strong></p>
-</li>
-<li><p>Cache-Control    <strong>缓存控制</strong></p>
-</li>
-</ul>
-<hr>
-<p>###实体主体###</p>
-<blockquote>
-<p><strong>Content-Length</strong><br>作用：</p>
-<ul>
-<li>检测报文截尾</li>
-</ul>
-<ul>
-<li>对共享持久链接的多个报文进行正确分段</li>
-</ul>
-<p>检测截尾：</p>
-</blockquote>
-<p>###实体摘要###</p>
-<blockquote>
-<p>Content-MD5<br>对报文的完整性进行检测但是注意，如果传输时是通过gzip进行加密分块传输的话，是对gzip压缩文件进行摘要，客户端接收后对gzip文件进行验证</p>
-</blockquote>
-<p>###媒体类型和字符集###</p>
-<blockquote>
-<p>Content-Type<br>各种MIME类型<br>文本的字符编码 Content-Type: text/html; charset=utf-8<br>多部分媒体类型 Content-Type: multipart/form-data== or ===Content-Type: multipart/mixed<br>多部分媒体类型主要在以下两种情况下使用</p>
-<ul>
-<li>多部分表格提交（表单提交中需要上传图象）</li>
-<li>多部分范围响应</li>
-</ul>
-</blockquote>
-<p>###内容编码###</p>
-<blockquote>
-<p>内容编码的意思是对文档内容进行加密、压缩等操作</p>
-<ol>
-<li>内容编码类型<ul>
-<li>gzip</li>
-<li>compress</li>
-<li>deflate</li>
-<li>identity</li>
-</ul>
-</li>
-<li>Accept-Encoding首部<ul>
-<li>用来说明客户端可接受的编码方式，如果客户端没有发送Accept-Encoding首部则服务器默认客户端支持任意编码方式</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-<p>###传输编码和分块编码###</p>
-<ul>
-<li><strong>传输编码</strong><blockquote>
-<p>使用传输编码是为了改变数据在网络上的传输方式<br>内容编码和传输编码的区别<br>经过内容编码的报文值作用于实体首部未发生改变，而传输编码，编码作用在整个报文上，报文的结构发生了改变<br><strong>传输编码的作用</strong></p>
-<ul>
-<li>可靠传输</li>
-</ul>
-<p><strong>传输编码的首部</strong><br>Transfer-Encoding告知接收方运用了何种传输编码<br>TE告知发送方可以使用何种传输编码</p>
-</blockquote>
-</li>
-<li><strong>分块编码</strong><blockquote>
-<p>分块编码是传输编码的一种<br>分块与持久链接：当进行的是持久连接时，必须知道Content-Length的大小但是当服务器创建的内容是动态变化的时候无法提前知道Content-Length大小这时需要进行分块编码传输，即将报文分成块传输只需知道每块的大小即可，以0大小块结尾。<br>内容编码与传输编码的结合<br>传输编码的规则</p>
-</blockquote>
-</li>
-</ul>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://alixwang.github.io/2016/03/08/2015-01-30-HTTP实体和编码/" data-id="cili6ooyr0001y4agrrhnyqdo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-06-09-Javascript高级程序设计" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-2015-06-09-Javascript高级程序设计" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/08/2015-06-09-Javascript高级程序设计/" class="article-date">
   <time datetime="2016-03-07T16:09:11.198Z" itemprop="datePublished">2016-03-08</time>
@@ -361,55 +240,28 @@ alert( isNaN( true ) )    // false
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/07/hello-world/" class="article-date">
-  <time datetime="2016-03-07T15:41:06.373Z" itemprop="datePublished">2016-03-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
+    <a href="/2016/03/08/2015-01-30-HTTP实体和编码/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
         
+          (no title)
+        
+      </div>
+    </a>
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/07/hello-world/">Hello World</a>
-    </h1>
   
+    <a href="/2016/03/07/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://alixwang.github.io/2016/03/07/hello-world/" data-id="cili6ooyr0002y4agipg12bom" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
-
-
-  
 
 </section>
         
