@@ -64,298 +64,33 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-2015-01-11-第一篇日志" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="day-day" class="article article-type-day" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/08/2015-01-11-第一篇日志/" class="article-date">
-  <time datetime="2016-03-07T16:09:13.302Z" itemprop="datePublished">2016-03-08</time>
+    <a href="/2016/03/09/day/" class="article-date">
+  <time datetime="2016-03-09T01:17:09.000Z" itemprop="datePublished">2016-03-09</time>
 </a>
     
   </div>
   <div class="article-inner">
     
     
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>##这个是我的第一篇博客文章</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://alixwang.github.io/2016/03/08/2015-01-11-第一篇日志/" data-id="cili6ooyb0000y4agypaj70k0" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
+      <header class="article-header">
+        
   
-</article>
-
-
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/09/day/">day</a>
+    </h1>
   
-    <article id="post-2015-01-30-HTTP实体和编码" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/08/2015-01-30-HTTP实体和编码/" class="article-date">
-  <time datetime="2016-03-07T16:09:11.198Z" itemprop="datePublished">2016-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#HTTP实体和编码</p>
-<p>##报文实体的组成</p>
-<p>###实体首部###</p>
-<ul>
-<li><p>Content-Type              <strong>实体类型</strong> </p>
-</li>
-<li><p>Content-Length  <strong>实体长度</strong></p>
-</li>
-<li><p>Content-Language    <strong>实体语言</strong></p>
-</li>
-<li><p>Content-Encoding    <strong>对数据所做的任意变换</strong></p>
-</li>
-<li><p>Content-Location<strong>一个备用位置，请求时可通过他获得对象</strong></p>
-</li>
-<li><p>Content-Range <strong>如果这是部分实体，这个首部说明他是整体的哪个部分</strong></p>
-</li>
-<li><p>Content-MD5<strong>实体主体内容的校验和</strong></p>
-</li>
-<li><p>Last-Modified<strong>所传输内容在服务器上创建或最后修改的时间</strong></p>
-</li>
-<li><p>Expires<strong>实体数据将要失效的日期时间</strong></p>
-</li>
-<li><p>Allow <strong>该资源所允许的各种请求方法 EG：GET、HEAD</strong></p>
-</li>
-<li><p>ETag<strong>文档实例的唯一验证码</strong></p>
-</li>
-<li><p>Cache-Control    <strong>缓存控制</strong></p>
-</li>
-</ul>
-<hr>
-<p>###实体主体###</p>
-<blockquote>
-<p><strong>Content-Length</strong><br>作用：</p>
-<ul>
-<li>检测报文截尾</li>
-</ul>
-<ul>
-<li>对共享持久链接的多个报文进行正确分段</li>
-</ul>
-<p>检测截尾：</p>
-</blockquote>
-<p>###实体摘要###</p>
-<blockquote>
-<p>Content-MD5<br>对报文的完整性进行检测但是注意，如果传输时是通过gzip进行加密分块传输的话，是对gzip压缩文件进行摘要，客户端接收后对gzip文件进行验证</p>
-</blockquote>
-<p>###媒体类型和字符集###</p>
-<blockquote>
-<p>Content-Type<br>各种MIME类型<br>文本的字符编码 Content-Type: text/html; charset=utf-8<br>多部分媒体类型 Content-Type: multipart/form-data== or ===Content-Type: multipart/mixed<br>多部分媒体类型主要在以下两种情况下使用</p>
-<ul>
-<li>多部分表格提交（表单提交中需要上传图象）</li>
-<li>多部分范围响应</li>
-</ul>
-</blockquote>
-<p>###内容编码###</p>
-<blockquote>
-<p>内容编码的意思是对文档内容进行加密、压缩等操作</p>
-<ol>
-<li>内容编码类型<ul>
-<li>gzip</li>
-<li>compress</li>
-<li>deflate</li>
-<li>identity</li>
-</ul>
-</li>
-<li>Accept-Encoding首部<ul>
-<li>用来说明客户端可接受的编码方式，如果客户端没有发送Accept-Encoding首部则服务器默认客户端支持任意编码方式</li>
-</ul>
-</li>
-</ol>
-</blockquote>
-<p>###传输编码和分块编码###</p>
-<ul>
-<li><strong>传输编码</strong><blockquote>
-<p>使用传输编码是为了改变数据在网络上的传输方式<br>内容编码和传输编码的区别<br>经过内容编码的报文值作用于实体首部未发生改变，而传输编码，编码作用在整个报文上，报文的结构发生了改变<br><strong>传输编码的作用</strong></p>
-<ul>
-<li>可靠传输</li>
-</ul>
-<p><strong>传输编码的首部</strong><br>Transfer-Encoding告知接收方运用了何种传输编码<br>TE告知发送方可以使用何种传输编码</p>
-</blockquote>
-</li>
-<li><strong>分块编码</strong><blockquote>
-<p>分块编码是传输编码的一种<br>分块与持久链接：当进行的是持久连接时，必须知道Content-Length的大小但是当服务器创建的内容是动态变化的时候无法提前知道Content-Length大小这时需要进行分块编码传输，即将报文分成块传输只需知道每块的大小即可，以0大小块结尾。<br>内容编码与传输编码的结合<br>传输编码的规则</p>
-</blockquote>
-</li>
-</ul>
-
+        
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://alixwang.github.io/2016/03/08/2015-01-30-HTTP实体和编码/" data-id="cili6ooyr0001y4agrrhnyqdo" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2015-06-09-Javascript高级程序设计" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/08/2015-06-09-Javascript高级程序设计/" class="article-date">
-  <time datetime="2016-03-07T16:09:11.198Z" itemprop="datePublished">2016-03-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="第一部分-基本概念"><a href="#第一部分-基本概念" class="headerlink" title="###第一部分 基本概念"></a>###第一部分 基本概念</h2><p>######1.1 严格模式</p>
-<blockquote>
-<p> ECMAScript 5引入了严格模式（strict mode）的概念。严格模式是为Javascript定义了一种不同的解析和执行模型。在严格模式下，ECMAScript 3 中的一些不确定的行为将得到处理。对某些不安全的操作也会抛出错误。</p>
-</blockquote>
-<p> 启用方法</p>
-<pre><code>&quot;use strict&quot;
-</code></pre><p>在函数内部的上方包含着条编译指示，也可以制定函数在严格模式下执行。</p>
-<pre><code>function dosomthing(){
-&quot;use strict&quot;
-//函数体    
-}    
-</code></pre><p>在严格模式下，JavaScript的执行结果会有很大的不同，支持严格模式的浏览器包括IE10+、FF4+、SF5.1+、Opera12+、Chrome。</p>
-<p>######1.2变量</p>
-<blockquote>
-<p>ECMAScript的变量是松散类型的，可以用来保存任何类型的数据.<br>①定义变量时使用Var关键字定义的是具有特定作用域的变量，在函数内定义的变量则其作用域就是函数的作用域；当省略Var关键字时，不论其位于何位置，其作用域都是全局的。所以在定义变量时为了便于管理和产生意外的错误建议使用Var关键字。</p>
-</blockquote>
-<p><em>notes 在严格模式下如果给未声明变量赋值会抛出ReferenceError：**</em> is not defined*.错误</p>
-<blockquote>
-<p>②JavaScript中变量没有块级作用域</p>
-</blockquote>
-<pre><code>for(var i=0; i&lt;10 ; i++){
-    alert(i)
-}
-alert(i);//仍然可以弹出i的值
-</code></pre><p><em>notes 使用ECMAScript6 中的let关键字可以模拟块级作用域</em></p>
-<pre><code>for(let i=0; i&lt;10; i++){
-    alert(i);
-}
-alert(i);//i未定义
-</code></pre><p>#####1.3数据类型</p>
-<blockquote>
-<p>ECMAScript中有5种简单数据类型（也称为基本数据类型）Undefined、Null、Number、String和一种复杂数据类型Object。</p>
-</blockquote>
-<p>① Typeof操作符</p>
-<p>② Undefined类型</p>
-<blockquote>
-<p>已经声明但为赋值的变量为Undefined<br>将Undefined赋值给变量也为Undefined</p>
-</blockquote>
-<p>③Null类型</p>
-<blockquote>
-<p>Null类型表示的是一个空的对象指针</p>
-</blockquote>
-<p>④Boolean 类型</p>
-<blockquote>
-<p>BooLen 类型是ECMAScript 中使用得最多的一种类型，该类型只有两种值true和false。</p>
-</blockquote>
-<p><em>notes：Boolean类型的字面值true和false是区分大小写。即True和False都不是Boolean的值只是标识符。</em></p>
-<blockquote>
-<p>将其他类型值转换为Boolean值的方法，调用Boolean()函数。</p>
-</blockquote>
-<pre><code>var message = &quot;hellow&quot;;
-var messageBoolean  = Boolean(message);    //true
-</code></pre><p>在实际应用时基本都是自动转换的，例如在if语句中判断时。</p>
-<p>⑤Number类型</p>
-<blockquote>
-<p>ECMAscript中的Number类型使用IEEE754格式来表示，整数和浮点数值（浮点数值在某些语言中也被称为双精度数值）</p>
-</blockquote>
-<p>十进制  intNum = 55  //整数<br>八进制  必须以0开头，然后是八进制数字序列（007）</p>
-<pre><code>var octalNum1 = 070        //八进制的56
-var octalNum2 = 079        //无效的八进制---解析为79
-var octalNum3 = 08        //无效的八进制---解析为8
-</code></pre><p>十六进制    开头以0x表示</p>
-<pre><code>var hexNum = 0xA     //十六进制的10
-</code></pre><p><em>notes：在进行算数运算时所有以八进制和十六进制表示的数值都将被转换成十进制数值。</em></p>
-<pre><code>var octalNum = 073;    //59
-var hexNum = 0xA;    //10
-console.log(octalNum + hexNum);    //69
-</code></pre><p><strong>浮点值</strong></p>
-<blockquote>
-<p>所谓的浮点值，就是数值中必须包含一个小数点，并且小数点后面至少有以为数字。虽然小数点后面可以没有数字，但不推荐这种写法。</p>
-</blockquote>
-<pre><code>var floatNum1 = 1.1;
-var floatNum2 = 0.1;
-var floatNum3 = .1;    //有效但是不推荐
-</code></pre><blockquote>
-<p>由于保存浮点数对内存开销比保存整数大得多所以ECMAScript会对可以转换为整数的浮点数转换为整数。</p>
-</blockquote>
-<pre><code>var floatNum1 = 1.;    //小数点后面没有数字———&gt;解析为1
-var floatNum2 =10.0;    //整数—————&gt;解析为10
-</code></pre><blockquote>
-<p>对于极大或极小的数字采用科学计数法。</p>
-</blockquote>
-<pre><code>var floatNum = 3.125e7         //31250000
-</code></pre><blockquote>
-<p><em>关于浮点数值不能进行精确计算，因为ECMAScript进行浮点计算时需要先将其转换为二进制表示，然后再进行计算，所以会产生误差（在操作符节进行细说）</em></p>
-</blockquote>
-<p><strong>数值范围</strong></p>
-<pre><code>Number.MIN_VALUE        //可存储的最小值
-Number.MAX_VALUE        //可存储的最大值
-/*
-    不同的浏览器可能有不同的最大最小值但根据我的测试Nodejs的V8引擎、FF、IE都是一样的
-*/
-</code></pre><blockquote>
-<p>当超过最大或最小范围时就会返回Infinity值，所以ECMAScript有函数siFinate()来检测到底是否是有效值。</p>
-</blockquote>
-<p><strong>NAN(Not a Number)</strong></p>
-<blockquote>
-<p>NAN本身有两个非同寻常的特点。首先，任何设计NAN的操作都会返回NaN。这个特性在多步计算中可能导致问题。其次，NaN与任何值都不相等。所以ECMAScript定义了isNaN()函数。</p>
-</blockquote>
-<pre><code>alert( NaN == NaN )        // false
-
-alert( isNaN( NaN ) )    // true
-alert( isNaN( 10 ) )    // false
-alert( isNaN( &quot;10&quot; ) )    // false
-alert( isNaN( &quot;blue&quot; ) )    // true
-alert( isNaN( true ) )    // false
-</code></pre><blockquote>
-<p><em>isNaN() 也可以用来检测对象，基于对象调用<strong>jsNaN()</strong>时，会首先调用对象的<strong>valueOf()</strong>方法，然后确定该方法返回值是否可以转换为数值。如果不能，则基于这个返回值在调用<strong>toString()</strong>方法，再测试返回值。</em></p>
-</blockquote>
-<p><strong>数值转换</strong></p>
-<blockquote>
-<p>有三个函数可以把非数值转换为数值：Number()、parseInt()、parseFloat()。</p>
-<p>Number()的转换规则</p>
-<ul>
-<li>.如果是Boolean值，则true和false将分别转换为0和1；</li>
-<li>.如果数字则是本身；</li>
-<li>.如果null值则是0；</li>
-<li>.如果是undefined返回NaN；</li>
-<li>.如果是字符串则遵循<br>1 .只包含数字则直接返回对应的数值，去除字符串中的前导零；<br>2 .包含有效的浮点值，则转换为对应的浮点值去除前导零；<br>3 .包含有效的十六进制值（0x123），则转换为对应的十进制值；<br>4 .如果字符串为空，则转换为0；<br>5 .如果字符串中包含除上述格式之外的字符，则将其转换为NaN。</li>
-</ul>
-<p>parseInt()的转换规则</p>
-<ul>
-<li>.忽略前导0和前导空格； </li>
-<li>.字符串为空返回NaN；</li>
-<li>.如果开头字符不是数字则返回NaN；</li>
-<li>.浮点值会解析为整数值；</li>
-<li><p>.可以解析数字格式（八进制，十进制，十六进制）；</p>
-<p>  var num1 = parseInt( “1234blue” )    //1234<br>  var num2 = parseInt( “ “ )    //NaN<br>  var num3 = parseInt( “0xA” )    //16<br>  var num4 = parseInt( 22.5 )        //22<br>  var num5 = parseInt( “070” )    //56<br>  var num6 = parseInt( “70” )        //70<br>  var num7 = parseInt( “blue1234” )    //NaN<br>  <em>parseint()最好指定后面的基数这样就会避免错误的发生</em></p>
-</li>
-</ul>
-<p>paseFloat()的转换规则</p>
-<ul>
-<li>字符串中的第一个小数点有效</li>
-<li>只解析10进制值</li>
-</ul>
-</blockquote>
-<p><strong>String类型</strong></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://alixwang.github.io/2016/03/08/2015-06-09-Javascript高级程序设计/" data-id="cili6ooz60003y4ag5pkqujbz" class="article-share-link">Share</a>
+      <a data-url="http://alixwang.github.io/2016/03/09/day/" data-id="cilk5pa4j0000l0ageenzkp0c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -400,7 +135,7 @@ alert( isNaN( true ) )    // false
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://alixwang.github.io/2016/03/07/hello-world/" data-id="cili6ooyr0002y4agipg12bom" class="article-share-link">Share</a>
+      <a data-url="http://alixwang.github.io/2016/03/07/hello-world/" data-id="cilk5pa6g0001l0agjxvw555c" class="article-share-link">Share</a>
       
       
     </footer>
@@ -440,15 +175,7 @@ alert( isNaN( true ) )    // false
       <ul>
         
           <li>
-            <a href="/2016/03/08/2015-01-11-第一篇日志/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/08/2015-01-30-HTTP实体和编码/">(no title)</a>
-          </li>
-        
-          <li>
-            <a href="/2016/03/08/2015-06-09-Javascript高级程序设计/">(no title)</a>
+            <a href="/2016/03/09/day/">day</a>
           </li>
         
           <li>
